@@ -2,7 +2,7 @@
 import java.io.*;
 import java.net.*;
 import java.sql.*;
-
+import java.util.ArrayList;
 
 
 public class ThreadedDataObjectServer {
@@ -50,9 +50,27 @@ class ThreadedDataObjectHandler extends Thread {
                     myLoginObject.setMessage("Authorized");
                     System.out.println("Message written: " + myLoginObject.getMessage());
                     myLoginObject.setUsername(username);
+                    myLoginObject.setUserList(connection.fetchUsers());
                 }
 
-                //TODO: RETURN ENTIRE ADDRESS BOOK
+                out.writeObject(myLoginObject);
+            }
+
+            // AUTHENTICATING ADMINISTRATORS
+            if (myObject.getMessage().equals("AdminLoginCredentials")) {
+                LoginObject myLoginObject = (LoginObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                String username = myLoginObject.getUsername();
+                String password = myLoginObject.getPassword();
+                System.out.println("Authenticating user: " + username + myLoginObject.getMessage());
+
+                if (connection.adminAuthentication(username, password)) {
+                    myLoginObject.setMessage("Authorized");
+                    System.out.println("Message written: " + myLoginObject.getMessage());
+                    myLoginObject.setUsername(username);
+                    myLoginObject.setUserList(connection.fetchUsers());
+                }
 
                 out.writeObject(myLoginObject);
             }

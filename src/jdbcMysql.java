@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 class JdbcMysql {
 
@@ -49,6 +50,97 @@ class JdbcMysql {
         }
 
         return authenticated;
+    }
+
+    public boolean adminAuthentication(String username, String password) {
+        boolean authenticated = false;
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            ResultSet rs = stmt.executeQuery("select * from adminlogin where username='" + username + "' and password='" + password + "'");
+            int count = 0;
+            while (rs.next()) {
+                count++;
+            }
+            if (count > 0) {
+                authenticated = true;
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return authenticated;
+    }
+
+
+
+    public ArrayList<UserObject> fetchUsers() {
+
+        ArrayList<UserObject> userList = new ArrayList<>();
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            ResultSet rs = stmt.executeQuery("select * from users");
+
+            while(rs.next()) {
+                UserObject temp = new UserObject(rs.getInt("id"), rs.getString("name"), rs.getString("address"), rs.getString("email"),rs.getString("phone"));
+                userList.add(temp);
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return userList;
     }
 
 

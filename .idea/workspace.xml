@@ -29,30 +29,61 @@
     <favorites_list name="CS602Project" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.54285717">
       <split-first>
         <leaf>
-          <file leaf-file-name="ThreadedDataObjectServer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
+          <file leaf-file-name="AddressBookClient.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
+                <state relative-caret-position="402">
+                  <caret line="652" column="76" selection-start-line="652" selection-start-column="76" selection-end-line="652" selection-end-column="76" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#547#548#0" expanded="true" />
-                    <element signature="e#575#576#0" expanded="true" />
+                    <element signature="class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+                    <element signature="method#AdminPortalPanel#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+                    <element signature="e#3837#4243#0" expanded="true" />
+                    <element signature="e#4242#4243#0" expanded="true" />
+                    <element signature="e#5617#6023#0" expanded="true" />
+                    <element signature="e#6022#6023#0" expanded="true" />
+                    <element signature="e#6061#6467#0" expanded="true" />
+                    <element signature="e#6466#6467#0" expanded="true" />
+                    <element signature="method#addRowToTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+                    <element signature="class#LoginButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+                    <element signature="class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+                    <element signature="e#12119#12525#0" expanded="true" />
+                    <element signature="e#12524#12525#0" expanded="true" />
+                    <element signature="e#13899#14305#0" expanded="true" />
+                    <element signature="e#14304#14305#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AddressBookClient.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
+          <file leaf-file-name="LoginObject.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/LoginObject.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="161" column="74" selection-start-line="161" selection-start-column="74" selection-end-line="161" selection-end-column="74" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#254#255#0" expanded="true" />
+                    <element signature="e#285#286#0" expanded="true" />
+                    <element signature="e#348#349#0" expanded="true" />
+                    <element signature="e#388#389#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PersonDAO.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/java-addressbook/PersonDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+                  <folding>
+                    <marker date="1161601368000" expanded="true" signature="1062:1111" ph="SELECT * FRO... Person" />
+                    <marker date="1161601368000" expanded="true" signature="1909:1985" ph="INSERT INTO Person... " />
+                    <marker date="1161601368000" expanded="true" signature="2392:2470" ph="UPDATE Perso... " />
+                    <marker date="1161601368000" expanded="true" signature="2925:2958" ph="DELETE FROM " />
                   </folding>
                 </state>
               </provider>
@@ -62,20 +93,48 @@
       </split-first>
       <split-second>
         <leaf>
+          <file leaf-file-name="ThreadedDataObjectServer.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="503">
+                  <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="JdbcMysql.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JdbcMysql.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-51">
-                  <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+                <state relative-caret-position="510">
+                  <caret line="79" column="26" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
                   <folding>
-                    <marker date="1494375452994" expanded="true" signature="1208:1299" ph="select * fro... login" />
-                    <marker date="1494375452994" expanded="true" signature="2749:2774" ph="DROP TABLE I... " />
-                    <marker date="1494375452994" expanded="true" signature="2939:3271" ph="CREATE TABLE... user" />
-                    <marker date="1494375452994" expanded="true" signature="3424:3571" ph="INSERT INTO user... " />
-                    <marker date="1494375452994" expanded="true" signature="3607:3752" ph="INSERT INTO user... " />
-                    <marker date="1494375452994" expanded="true" signature="3788:3934" ph="INSERT INTO user... " />
-                    <marker date="1494375452994" expanded="true" signature="4095:4113" ph="SELECT * fro... user" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
+                    <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
+                    <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
+                    <marker date="1494403747735" expanded="true" signature="1236:1327" ph="select * fro... login" />
+                    <marker date="1494403747735" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+                    <marker date="1494403747735" expanded="true" signature="4518:4537" ph="select * fro... memberlogin" />
+                    <marker date="1494403747735" expanded="true" signature="6044:6069" ph="DROP TABLE I... " />
+                    <marker date="1494403747735" expanded="true" signature="6234:6566" ph="CREATE TABLE... user" />
+                    <marker date="1494403747735" expanded="true" signature="6719:6866" ph="INSERT INTO user... " />
+                    <marker date="1494403747735" expanded="true" signature="6902:7047" ph="INSERT INTO user... " />
+                    <marker date="1494403747735" expanded="true" signature="7083:7229" ph="INSERT INTO user... " />
+                    <marker date="1494403747735" expanded="true" signature="7390:7408" ph="SELECT * fro... user" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserObject.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/UserObject.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -113,11 +172,15 @@
         <option value="$PROJECT_DIR$/src/sidproj/WriteData.java" />
         <option value="$PROJECT_DIR$/src/echo/EchoClientFrame.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
-        <option value="$PROJECT_DIR$/src/LoginObject.java" />
         <option value="$PROJECT_DIR$/src/sidproj/ChatServer.java" />
         <option value="$PROJECT_DIR$/src/jdbcMysql.java" />
-        <option value="$PROJECT_DIR$/src/JdbcMysql.java" />
+        <option value="$PROJECT_DIR$/src/jtablefromal/jtable.java" />
+        <option value="$PROJECT_DIR$/src/jtablefromal/Java_Populate_JTable_Using_ArrayList.java" />
+        <option value="$PROJECT_DIR$/src/LoginObject.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/UserObject.java" />
         <option value="$PROJECT_DIR$/src/ThreadedDataObjectServer.java" />
+        <option value="$PROJECT_DIR$/src/JdbcMysql.java" />
         <option value="$PROJECT_DIR$/src/AddressBookClient.java" />
       </list>
     </option>
@@ -191,6 +254,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS602Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS602Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ThreadedDataObjectServer.java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
@@ -209,22 +286,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CS602Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CS602Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sidproj" />
+              <option name="myItemId" value="jtablefromal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,12 +305,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sidproj" />
+              <option name="myItemId" value="java-addressbook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -275,47 +334,7 @@
       <recent name="C:\CS602Project\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AddressBookClient">
-    <configuration default="false" name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sidproj.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sidproj.Client" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CS602Project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ConsoleClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sidproj.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sidproj.ConsoleClient" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CS602Project" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.AddressBookDemo">
     <configuration default="false" name="EchoClientFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -354,6 +373,41 @@
     <configuration default="false" name="ThreadedDataObjectServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ThreadedDataObjectServer" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CS602Project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Java_Populate_JTable_Using_ArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="jtablefromal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="jtablefromal.Java_Populate_JTable_Using_ArrayList" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CS602Project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="AddressBookDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="AddressBookDemo" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -865,19 +919,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Client (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ConsoleClient" />
-      <item index="2" class="java.lang.String" itemvalue="Application.EchoClientFrame" />
-      <item index="3" class="java.lang.String" itemvalue="Application.AddressBookClient" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ThreadedDataObjectServer" />
+      <item index="0" class="java.lang.String" itemvalue="Application.EchoClientFrame" />
+      <item index="1" class="java.lang.String" itemvalue="Application.AddressBookClient" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ThreadedDataObjectServer" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Java_Populate_JTable_Using_ArrayList" />
+      <item index="4" class="java.lang.String" itemvalue="Application.AddressBookDemo" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.AddressBookClient" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ThreadedDataObjectServer" />
-        <item index="2" class="java.lang.String" itemvalue="Application.EchoClientFrame" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Client (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.ConsoleClient" />
+        <item index="0" class="java.lang.String" itemvalue="Application.AddressBookDemo" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Java_Populate_JTable_Using_ArrayList" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AddressBookClient" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ThreadedDataObjectServer" />
+        <item index="4" class="java.lang.String" itemvalue="Application.EchoClientFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -894,12 +948,12 @@
       <workItem from="1491436544525" duration="2615000" />
       <workItem from="1492633486295" duration="637000" />
       <workItem from="1494104059972" duration="3347000" />
-      <workItem from="1494112647716" duration="26317000" />
+      <workItem from="1494112647716" duration="43812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32916000" />
+    <option name="totallyTimeSpent" value="50411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -907,14 +961,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12473573" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.093023255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21353066" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -945,7 +999,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -960,8 +1014,6 @@
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -971,13 +1023,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1494375452994" expanded="true" signature="1208:1299" ph="select * fro... login" />
-            <marker date="1494375452994" expanded="true" signature="2749:2774" ph="DROP TABLE I... " />
-            <marker date="1494375452994" expanded="true" signature="2939:3271" ph="CREATE TABLE... user" />
-            <marker date="1494375452994" expanded="true" signature="3424:3571" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="3607:3752" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="3788:3934" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="4095:4113" ph="SELECT * fro... user" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
+            <marker date="1494403747735" expanded="true" signature="1236:1327" ph="select * fro... login" />
+            <marker date="1494403747735" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+            <marker date="1494403747735" expanded="true" signature="4518:4537" ph="select * fro... memberlogin" />
+            <marker date="1494403747735" expanded="true" signature="6044:6069" ph="DROP TABLE I... " />
+            <marker date="1494403747735" expanded="true" signature="6234:6566" ph="CREATE TABLE... user" />
+            <marker date="1494403747735" expanded="true" signature="6719:6866" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="6902:7047" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="7083:7229" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="7390:7408" ph="SELECT * fro... user" />
           </folding>
         </state>
       </provider>
@@ -1080,7 +1138,7 @@
         <state relative-caret-position="1615">
           <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1090,34 +1148,6 @@
         <state relative-caret-position="221">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,14 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/echo/EchoServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1175,40 +1197,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JdbcMysql.java">
+    <entry file="file://$PROJECT_DIR$/src/echo/EchoServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="238">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java-addressbook/PersonInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
-            <marker date="1494375452994" expanded="true" signature="1208:1299" ph="select * fro... login" />
-            <marker date="1494375452994" expanded="true" signature="2749:2774" ph="DROP TABLE I... " />
-            <marker date="1494375452994" expanded="true" signature="2939:3271" ph="CREATE TABLE... user" />
-            <marker date="1494375452994" expanded="true" signature="3424:3571" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="3607:3752" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="3788:3934" ph="INSERT INTO user... " />
-            <marker date="1494375452994" expanded="true" signature="4095:4113" ph="SELECT * fro... user" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java-addressbook/PersonDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <marker date="1161601368000" expanded="true" signature="1062:1111" ph="SELECT * FRO... Person" />
+            <marker date="1161601368000" expanded="true" signature="1909:1985" ph="INSERT INTO Person... " />
+            <marker date="1161601368000" expanded="true" signature="2392:2470" ph="UPDATE Perso... " />
+            <marker date="1161601368000" expanded="true" signature="2925:2958" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jtablefromal/Java_Populate_JTable_Using_ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1000#1006#0" expanded="true" />
+            <element signature="e#2014#2077#0" expanded="true" />
+            <element signature="e#3906#3993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java-addressbook/AddressBookDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="122" column="40" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
+        <state relative-caret-position="503">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JdbcMysql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="79" column="26" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
+            <marker date="1494403747735" expanded="true" signature="1236:1327" ph="select * fro... login" />
+            <marker date="1494403747735" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+            <marker date="1494403747735" expanded="true" signature="4518:4537" ph="select * fro... memberlogin" />
+            <marker date="1494403747735" expanded="true" signature="6044:6069" ph="DROP TABLE I... " />
+            <marker date="1494403747735" expanded="true" signature="6234:6566" ph="CREATE TABLE... user" />
+            <marker date="1494403747735" expanded="true" signature="6719:6866" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="6902:7047" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="7083:7229" ph="INSERT INTO user... " />
+            <marker date="1494403747735" expanded="true" signature="7390:7408" ph="SELECT * fro... user" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="161" column="74" selection-start-line="161" selection-start-column="74" selection-end-line="161" selection-end-column="74" />
+        <state relative-caret-position="402">
+          <caret line="652" column="76" selection-start-line="652" selection-start-column="76" selection-end-line="652" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="method#AdminPortalPanel#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="e#3837#4243#0" expanded="true" />
+            <element signature="e#4242#4243#0" expanded="true" />
+            <element signature="e#5617#6023#0" expanded="true" />
+            <element signature="e#6022#6023#0" expanded="true" />
+            <element signature="e#6061#6467#0" expanded="true" />
+            <element signature="e#6466#6467#0" expanded="true" />
+            <element signature="method#addRowToTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="class#LoginButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="e#12119#12525#0" expanded="true" />
+            <element signature="e#12524#12525#0" expanded="true" />
+            <element signature="e#13899#14305#0" expanded="true" />
+            <element signature="e#14304#14305#0" expanded="true" />
           </folding>
         </state>
       </provider>
