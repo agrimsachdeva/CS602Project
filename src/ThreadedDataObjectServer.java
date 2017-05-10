@@ -75,6 +75,48 @@ class ThreadedDataObjectHandler extends Thread {
                 out.writeObject(myLoginObject);
             }
 
+            // ADDING RECORDS
+            if (myObject.getMessage().equals("AddRecord")) {
+                UserObject myUserObject = (UserObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                String name = myUserObject.getName();
+                String address = myUserObject.getAddress();
+                String email = myUserObject.getEmail();
+                String phone = myUserObject.getPhone();
+
+                System.out.println("Adding user: " + name);
+
+                if (connection.addRecord(name, address, email, phone)) {
+                    myUserObject.setMessage("Added");
+                    System.out.println("Message written: " + myUserObject.getMessage());
+//                    myUserObject.setUsername(username);
+//                    myUserObject.setUserList(connection.fetchUsers());
+                }
+
+                out.writeObject(myUserObject);
+            }
+
+            // ADDING MEMBERS
+            if (myObject.getMessage().equals("AddMember")) {
+                MemberObject myUserObject = (MemberObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                String username = myUserObject.getUsername();
+                String password = myUserObject.getPassword();
+
+                System.out.println("Adding member: " + username);
+
+                if (connection.addMember(username, password)) {
+                    myUserObject.setMessage("Added");
+                    System.out.println("Message written: " + myUserObject.getMessage());
+//                    myUserObject.setUsername(username);
+//                    myUserObject.setUserList(connection.fetchUsers());
+                }
+
+                out.writeObject(myUserObject);
+            }
+
             in.close();
             out.close();
             incoming.close();

@@ -97,6 +97,83 @@ class JdbcMysql {
         return authenticated;
     }
 
+    public boolean addRecord(String name, String address, String email, String phone) {
+        boolean added = true;
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            stmt.execute("INSERT INTO `users` (name, address, email, phone) VALUES ('"+name+"','"+address+"','"+email+"','"+phone+"')");
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            added = false;
+
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return added;
+    }
+
+    public boolean addMember(String username, String password) {
+        boolean added = true;
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            stmt.execute("INSERT INTO `memberlogin` (username, password) VALUES ('"+username+"','"+password+"')");
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            added = false;
+
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return added;
+    }
 
 
     public ArrayList<UserObject> fetchUsers() {

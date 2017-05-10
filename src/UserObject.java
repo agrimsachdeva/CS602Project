@@ -6,6 +6,9 @@ public class UserObject extends DataObject {
     String name, address, email, phone;
     int id;
 
+    public UserObject() {
+    }
+
     public UserObject(Integer id, String name, String address, String email, String phone) {
         this.id = id;
         this.name = name;
