@@ -1,6 +1,9 @@
 
 import java.io.*;
 import java.net.*;
+import java.sql.*;
+
+
 
 public class ThreadedDataObjectServer {
     public static void main(String[] args) {
@@ -26,26 +29,36 @@ class ThreadedDataObjectHandler extends Thread {
 
     public void run() {
         try {
-            ObjectInputStream in =
+            in =
                     new ObjectInputStream(incoming.getInputStream());
 
-            ObjectOutputStream out =
+            out =
                     new ObjectOutputStream(incoming.getOutputStream());
 
             myObject = (DataObject) in.readObject();
 
-            System.out.println("Message read: " + myObject.getMessage());
+            // AUTHENTICATING USERS
+            if (myObject.getMessage().equals("LoginCredentials")) {
+                LoginObject myLoginObject = (LoginObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
 
-            myObject.setMessage("Got it!");
+                String username = myLoginObject.getUsername();
+                String password = myLoginObject.getPassword();
+                System.out.println("Authenticating user: " + username + myLoginObject.getMessage());
 
-            System.out.println("Message written: " + myObject.getMessage());
+                if (connection.memberAuthentication(username, password)) {
+                    myLoginObject.setMessage("Authorized");
+                    System.out.println("Message written: " + myLoginObject.getMessage());
+                    myLoginObject.setUsername(username);
+                }
 
-            out.writeObject(myObject);
+                //TODO: RETURN ENTIRE ADDRESS BOOK
+
+                out.writeObject(myLoginObject);
+            }
 
             in.close();
-
             out.close();
-
             incoming.close();
 
         } catch (Exception e) {
@@ -55,6 +68,9 @@ class ThreadedDataObjectHandler extends Thread {
 
     DataObject myObject = null;
     private Socket incoming;
+
+    ObjectOutputStream out;
+    ObjectInputStream in;
 
 }
 

@@ -7,43 +7,10 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class AddressBookClient {
-    public static void main(String[] arg) {
+    public static void main(String[] args) {
 
         AddressBookClient ab = new AddressBookClient();
         ab.start();
-
-//        try {
-//
-//
-//            DataObject myObject = new DataObject();
-//
-//            myObject.setMessage("Did you get this?");
-//
-//            System.out.println("Message sent : " + myObject.getMessage());
-//
-//            Socket socketToServer = new Socket("127.0.0.1", 3000);
-//
-//            ObjectOutputStream myOutputStream =
-//                    new ObjectOutputStream(socketToServer.getOutputStream());
-//
-//            ObjectInputStream myInputStream =
-//                    new ObjectInputStream(socketToServer.getInputStream());
-//
-//            myOutputStream.writeObject(myObject);
-//
-//            myObject = (DataObject) myInputStream.readObject();
-//
-//            System.out.println("Messaged received : " + myObject.getMessage());
-//
-//            myOutputStream.close();
-//
-//            myInputStream.close();
-//
-//            socketToServer.close();
-//
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
     }
 
     public void start() {
@@ -59,23 +26,35 @@ public class AddressBookClient {
         frame.setVisible(true);
     }
 
+    public void startMemberFrame() {
+        //Create and set up the window.
+        JFrame frame = new JFrame("Member Portal");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    public class LoginClientPanel extends JPanel implements ActionListener, Runnable{
+        //Create and set up the content pane.
+//        MemberPortalPanel mpp = new MemberPortalPanel(frame.getContentPane());
+
+        //Display the window.
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+
+    public class LoginClientPanel extends JPanel {
 
         final static String USERPANEL = "Member Login";
         final static String ADMINPANEL = "Administrator Login";
         final static int extraWindowWidth = 100;
 
-        JLabel usernameLabel, passwordLabel;
+        JLabel usernameLabel, passwordLabel, statusLabel;
         JTextField usernameText;
         JPasswordField passwordText;
         JButton loginButton;
 
-        JLabel adminUsernameLabel, adminPasswordLabel;
+        JLabel adminUsernameLabel, adminPasswordLabel, adminStatusLabel;
         JTextField adminUsernameText;
         JPasswordField adminPasswordText;
         JButton adminLoginButton;
-
 
 
         public LoginClientPanel(Container pane) {
@@ -86,13 +65,19 @@ public class AddressBookClient {
             usernameText = new JTextField(20);
             passwordText = new JPasswordField(20);
             loginButton = new JButton("Login");
+            statusLabel = new JLabel("");
 
+
+            loginButton.addActionListener(new LoginButtonListener());
 
             adminUsernameLabel = new JLabel("Enter Admin Username");
             adminPasswordLabel = new JLabel("Enter Admin Password");
             adminUsernameText = new JTextField(20);
             adminPasswordText = new JPasswordField(20);
             adminLoginButton = new JButton("Login");
+            adminStatusLabel = new JLabel("");
+
+            adminLoginButton.addActionListener(new AdminLoginButtonListener());
 
 
             //Create the "cards"
@@ -112,6 +97,7 @@ public class AddressBookClient {
             memberCard.add(passwordLabel);
             memberCard.add(passwordText);
             memberCard.add(loginButton, BOTTOM_ALIGNMENT);
+            memberCard.add(statusLabel);
 
             JPanel adminCard = new JPanel() {
                 //Make the panel wider than it really needs, so
@@ -128,81 +114,92 @@ public class AddressBookClient {
             adminCard.add(adminUsernameText);
             adminCard.add(adminPasswordLabel);
             adminCard.add(adminPasswordText);
-            adminCard.add(adminLoginButton, CENTER_ALIGNMENT);
+            adminCard.add(adminLoginButton);
+            adminCard.add(adminStatusLabel);
 
             tabbedPane.addTab(USERPANEL, memberCard);
             tabbedPane.addTab(ADMINPANEL, adminCard);
 
-            pane.add(tabbedPane, BorderLayout.CENTER);
+            pane.add(tabbedPane);
         }
 
 
-        PrintWriter pw;
-        BufferedReader br;
-        Socket s;
-        Thread t;
-        String temp;
 
-        public LoginClientPanel(){
+        public class LoginButtonListener implements ActionListener, Runnable {
 
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            LoginObject readLoginObject;
 
-//            tf = new TextField();
-//            tf.addActionListener(this);
-//            ta = new TextArea();
-//            add(tf, BorderLayout.NORTH);
-//            add(ta, BorderLayout.CENTER);
-//
-//            connect = new Button("Connect");
-//            connect.addActionListener(this);
-//            Panel p = new Panel();
-//            p.add(connect);
-//            add(p, BorderLayout.SOUTH);
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    LoginObject loginObject = new LoginObject();
 
+                    loginObject.setMessage("LoginCredentials");
 
-        }
+                    loginObject.setUsername(usernameText.getText().trim());
 
-        public void actionPerformed(ActionEvent ae){
-            //when enter key is presses while tf has focus
-//            if(ae.getSource() == connect){
-//                try{
-//                    s = new Socket("127.0.0.1", 3022);
-//                    pw = new PrintWriter(s.getOutputStream(), true);
-//                    br = new BufferedReader(new InputStreamReader(
-//                            s.getInputStream()));
-//                }catch(UnknownHostException uhe){
-//                    System.out.println(uhe.getMessage());
-//                }catch(IOException ioe){
-//                    System.out.println(ioe.getMessage());
-//                }
-//                connect.setEnabled(false);
-//
-//                t = new Thread(this);
-//                t.start();
-//            }else if(ae.getSource() == tf){
-//                String temp = tf.getText();
-//                pw.println(temp);
-//                tf.setText("");
-//            }
-        }
+                    loginObject.setPassword(String.valueOf(passwordText.getPassword()));
 
-        public void run(){
-//            try{
-//                while((temp = br.readLine()) != null){
-//                    ta.append(temp + "\n");
-//                }
-//            }catch(IOException ioe){
-//                System.out.println(ioe.getMessage());
-//            }
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(loginObject);
+
+                    readLoginObject = (LoginObject) myInputStream.readObject();
+
+                    if (readLoginObject.getMessage().equalsIgnoreCase("Authorized")) {
+                        System.out.println("User Authorized");
+
+                        startMemberFrame();
+                        //TODO: handle authenticated users, pass required
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                loginButton.setEnabled(false);
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Authorized")) {
+                        statusLabel.setText("Not Authorized");
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
         }
     }
 
-
-    public class LoginButtonListener implements ActionListener {
+    public class AdminLoginButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            //TODO: implement admin listener
 
-
-            }
+        }
     }
 }
 

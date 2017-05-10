@@ -6,11 +6,11 @@ public class Client {
         try {
 
 
-            DataObject myObject = new DataObject();
+            DataObject loginObject = new DataObject();
 
-            myObject.setMessage("Did you get this?");
+            loginObject.setMessage("Did you get this?");
 
-            System.out.println("Message sent : " + myObject.getMessage());
+            System.out.println("Message sent : " + loginObject.getMessage());
 
             Socket socketToServer = new Socket("127.0.0.1", 3000);
 
@@ -20,11 +20,11 @@ public class Client {
             ObjectInputStream myInputStream =
                     new ObjectInputStream(socketToServer.getInputStream());
 
-            myOutputStream.writeObject(myObject);
+            myOutputStream.writeObject(loginObject);
 
-            myObject = (DataObject) myInputStream.readObject();
+            loginObject = (DataObject) myInputStream.readObject();
 
-            System.out.println("Messaged received : " + myObject.getMessage());
+            System.out.println("Messaged received : " + loginObject.getMessage());
 
             myOutputStream.close();
 
