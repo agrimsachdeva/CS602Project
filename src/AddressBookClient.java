@@ -28,13 +28,13 @@ public class AddressBookClient {
         frame.setVisible(true);
     }
 
-    public void startMemberFrame(ArrayList userList) {
+    public void startMemberFrame(ArrayList userList, String user) {
         //Create and set up the window.
         JFrame frame = new JFrame("Member Portal");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
-        MemberPortalPanel mpp = new MemberPortalPanel(frame.getContentPane(), userList);
+        MemberPortalPanel mpp = new MemberPortalPanel(frame.getContentPane(), userList, user);
 
         //Display the window.
         frame.pack();
@@ -59,7 +59,7 @@ public class AddressBookClient {
         final static String RECORDSPANEL = "Member Records";
         final static String ADDPANEL = "Add A Record";
         final static String ADDMEMBER = "Add A Member";
-        final static String UPDATEMEMBER = "Update Your Record";
+        final static String UPDATEMEMBER = "Update Any Record By Name";
 
         final static int extraWindowWidth = 100;
 
@@ -77,6 +77,10 @@ public class AddressBookClient {
         JLabel addMemberNameLabel, addMemberPasswordLabel, statusLabel;
         JTextField addMemberNameText, addMemberPasswordText;
         JButton addMember;
+
+        JLabel nameLabel1, addressLabel1, emailLabel1, phoneLabel1, updateLabel1;
+        JTextField nameText1, addressText1, emailText1, phoneText1;
+        JButton updateButton1;
 
 
         public AdminPortalPanel(Container pane, ArrayList<UserObject> userList) {
@@ -318,9 +322,120 @@ public class AddressBookClient {
             addMember.addActionListener(new AddButtonListener());
 
 
+            JPanel updateCard1 = new JPanel() {
+                //Make the panel wider than it really needs, so
+                //the window's wide enough for the tabs to stay
+                //in one row.
+                public Dimension getPreferredSize() {
+                    Dimension size = super.getPreferredSize();
+                    size.width += extraWindowWidth;
+                    return size;
+                }
+            };
+
+            GridBagLayout panelGridBagLayout1 = new GridBagLayout();
+            panelGridBagLayout1.columnWidths = new int[]{86, 86, 0};
+            panelGridBagLayout1.rowHeights = new int[]{20, 20, 20, 20, 20, 0};
+            panelGridBagLayout1.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+            panelGridBagLayout1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+            updateCard1.setLayout(panelGridBagLayout1);
+
+
+            //LABEL AND FIELD FOR NAME
+            nameLabel1 = new JLabel("Name");
+            GridBagConstraints gridBagConstraintForNameLabel1 = new GridBagConstraints();
+            gridBagConstraintForNameLabel1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForNameLabel1.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForNameLabel1.gridx = 0;
+            gridBagConstraintForNameLabel1.gridy = 0;
+            updateCard1.add(nameLabel1, gridBagConstraintForNameLabel1);
+
+            nameText1 = new JTextField();
+            GridBagConstraints gridBagConstraintForAddressTextField1 = new GridBagConstraints();
+            gridBagConstraintForAddressTextField1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForAddressTextField1.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForAddressTextField1.gridx = 1;
+            gridBagConstraintForAddressTextField1.gridy = 0;
+            updateCard1.add(nameText1, gridBagConstraintForAddressTextField1);
+            nameText1.setColumns(10);
+
+
+            //LABEL AND FIELD FOR ADDRESS
+            addressLabel1 = new JLabel("Address");
+            GridBagConstraints gridBagConstraintForAddressLabel1 = new GridBagConstraints();
+            gridBagConstraintForAddressLabel1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForAddressLabel1.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForAddressLabel1.gridx = 0;
+            gridBagConstraintForAddressLabel1.gridy = 1;
+            updateCard1.add(addressLabel1, gridBagConstraintForAddressLabel1);
+
+            addressText1 = new JTextField();
+            GridBagConstraints gridBagConstraintForAddressTextField2 = new GridBagConstraints();
+            gridBagConstraintForAddressTextField2.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForAddressTextField2.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForAddressTextField2.gridx = 1;
+            gridBagConstraintForAddressTextField2.gridy = 1;
+            updateCard1.add(addressText1, gridBagConstraintForAddressTextField2);
+            addressText1.setColumns(10);
+
+            //LABEL AND FIELD FOR EMAIL
+            emailLabel1 = new JLabel("EMail");
+            GridBagConstraints gridBagConstraintForEMailLabel1 = new GridBagConstraints();
+            gridBagConstraintForEMailLabel1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForEMailLabel1.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForEMailLabel1.gridx = 0;
+            gridBagConstraintForEMailLabel1.gridy = 2;
+            updateCard1.add(emailLabel1, gridBagConstraintForEMailLabel1);
+
+            emailText1 = new JTextField();
+            GridBagConstraints gridBagConstraintForEMailTextField1 = new GridBagConstraints();
+            gridBagConstraintForEMailTextField1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForEMailTextField1.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForEMailTextField1.gridx = 1;
+            gridBagConstraintForEMailTextField1.gridy = 2;
+            updateCard1.add(emailText1, gridBagConstraintForEMailTextField1);
+            emailText1.setColumns(10);
+
+            //LABEL AND FIELD FOR PHONE
+            phoneLabel1 = new JLabel("Phone");
+            GridBagConstraints gridBagConstraintForPhoneLabel1 = new GridBagConstraints();
+            gridBagConstraintForPhoneLabel1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForPhoneLabel1.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForPhoneLabel1.gridx = 0;
+            gridBagConstraintForPhoneLabel1.gridy = 3;
+            updateCard1.add(phoneLabel1, gridBagConstraintForPhoneLabel1);
+
+            phoneText1 = new JTextField();
+            GridBagConstraints gridBagConstraintForPhoneTextField1 = new GridBagConstraints();
+            gridBagConstraintForPhoneTextField1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForPhoneTextField1.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForPhoneTextField1.gridx = 1;
+            gridBagConstraintForPhoneTextField1.gridy = 3;
+            updateCard1.add(phoneText1, gridBagConstraintForPhoneTextField1);
+            phoneText1.setColumns(10);
+
+            //LABEL AND FIELD FOR ADD RECORD BUTTON
+            updateButton1 = new JButton("Update Matching Record");
+
+            updateCard1.add(updateButton1);
+
+            updateButton1.addActionListener(new UpdateAnyButtonListener());
+
+            //LABEL AND FIELD FOR ADD RECORD STATUS
+            updateLabel1 = new JLabel("*****status******");
+            GridBagConstraints gridBagConstraintForUpdateLabel1 = new GridBagConstraints();
+            gridBagConstraintForUpdateLabel1.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForUpdateLabel1.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForUpdateLabel1.gridx = 0;
+            gridBagConstraintForUpdateLabel1.gridy = 5;
+            updateCard1.add(updateLabel1, gridBagConstraintForUpdateLabel1);
+
+
+
             tabbedPane.addTab(RECORDSPANEL, memberCard);
             tabbedPane.addTab(ADDPANEL, updateCard);
             tabbedPane.addTab(ADDMEMBER, addMemberCard);
+            tabbedPane.addTab(UPDATEMEMBER, updateCard1);
 
             pane.add(tabbedPane);
         }
@@ -604,13 +719,87 @@ public class AddressBookClient {
                 }
             }
         }
+
+        public class UpdateAnyButtonListener implements ActionListener, Runnable {
+
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            UserObject readUserObject;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UserObject userObject = new UserObject();
+
+                    userObject.setMessage("EditAnyRecord");
+
+                    System.out.println(userObject.getMessage());
+
+                    userObject.setName(nameText1.getText().trim());
+                    userObject.setAddress(addressText1.getText().trim());
+                    userObject.setEmail(emailText1.getText().trim());
+                    userObject.setPhone(phoneText1.getText().trim());
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(userObject);
+
+                    readUserObject = (UserObject) myInputStream.readObject();
+
+                    if (readUserObject.getMessage().equalsIgnoreCase("Added")) {
+                        System.out.println("Updated Successfully");
+                        updateLabel1.setText("Updated Successfully");
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readUserObject.getMessage()).equalsIgnoreCase("Added")) {
+                        updateLabel1.setText("*****status*****");
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
     }
 
     public class MemberPortalPanel extends JPanel {
 
+        String user;
+
         final static String RECORDSPANEL = "Member Records";
         final static String UPDATEMEMBER = "Update Your Record";
         final static int extraWindowWidth = 100;
+
+        JLabel nameLabel, addressLabel, emailLabel, phoneLabel, updateLabel;
+        JTextField addressText, emailText, phoneText;
+        JButton updateButton;
 
         JTable table;
         JScrollPane scrollPane;
@@ -619,7 +808,9 @@ public class AddressBookClient {
         JTextField searchTerm;
         JButton refreshButton;
 
-        public MemberPortalPanel(Container pane, ArrayList<UserObject> userList) {
+        public MemberPortalPanel(Container pane, ArrayList<UserObject> userList, String user) {
+            this.user = user;
+
             JTabbedPane tabbedPane = new JTabbedPane();
 
             table = new JTable();
@@ -694,6 +885,95 @@ public class AddressBookClient {
                     return size;
                 }
             };
+
+            GridBagLayout panelGridBagLayout = new GridBagLayout();
+            panelGridBagLayout.columnWidths = new int[]{86, 86, 0};
+            panelGridBagLayout.rowHeights = new int[]{20, 20, 20, 20, 20, 0};
+            panelGridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+            panelGridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+            updateCard.setLayout(panelGridBagLayout);
+
+
+            //LABEL AND FIELD FOR NAME
+            nameLabel = new JLabel(user);
+            GridBagConstraints gridBagConstraintForNameLabel = new GridBagConstraints();
+            gridBagConstraintForNameLabel.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForNameLabel.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForNameLabel.gridx = 0;
+            gridBagConstraintForNameLabel.gridy = 0;
+            updateCard.add(nameLabel, gridBagConstraintForNameLabel);
+
+
+            //LABEL AND FIELD FOR ADDRESS
+            addressLabel = new JLabel("Address");
+            GridBagConstraints gridBagConstraintForAddressLabel = new GridBagConstraints();
+            gridBagConstraintForAddressLabel.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForAddressLabel.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForAddressLabel.gridx = 0;
+            gridBagConstraintForAddressLabel.gridy = 1;
+            updateCard.add(addressLabel, gridBagConstraintForAddressLabel);
+
+            addressText = new JTextField();
+            GridBagConstraints gridBagConstraintForAddressTextField = new GridBagConstraints();
+            gridBagConstraintForAddressTextField.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForAddressTextField.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForAddressTextField.gridx = 1;
+            gridBagConstraintForAddressTextField.gridy = 1;
+            updateCard.add(addressText, gridBagConstraintForAddressTextField);
+            addressText.setColumns(10);
+
+            //LABEL AND FIELD FOR EMAIL
+            emailLabel = new JLabel("EMail");
+            GridBagConstraints gridBagConstraintForEMailLabel = new GridBagConstraints();
+            gridBagConstraintForEMailLabel.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForEMailLabel.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForEMailLabel.gridx = 0;
+            gridBagConstraintForEMailLabel.gridy = 2;
+            updateCard.add(emailLabel, gridBagConstraintForEMailLabel);
+
+            emailText = new JTextField();
+            GridBagConstraints gridBagConstraintForEMailTextField = new GridBagConstraints();
+            gridBagConstraintForEMailTextField.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForEMailTextField.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForEMailTextField.gridx = 1;
+            gridBagConstraintForEMailTextField.gridy = 2;
+            updateCard.add(emailText, gridBagConstraintForEMailTextField);
+            emailText.setColumns(10);
+
+            //LABEL AND FIELD FOR PHONE
+            phoneLabel = new JLabel("Phone");
+            GridBagConstraints gridBagConstraintForPhoneLabel = new GridBagConstraints();
+            gridBagConstraintForPhoneLabel.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForPhoneLabel.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForPhoneLabel.gridx = 0;
+            gridBagConstraintForPhoneLabel.gridy = 3;
+            updateCard.add(phoneLabel, gridBagConstraintForPhoneLabel);
+
+            phoneText = new JTextField();
+            GridBagConstraints gridBagConstraintForPhoneTextField = new GridBagConstraints();
+            gridBagConstraintForPhoneTextField.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForPhoneTextField.insets = new Insets(0, 0, 5, 0);
+            gridBagConstraintForPhoneTextField.gridx = 1;
+            gridBagConstraintForPhoneTextField.gridy = 3;
+            updateCard.add(phoneText, gridBagConstraintForPhoneTextField);
+            phoneText.setColumns(10);
+
+            //LABEL AND FIELD FOR ADD RECORD BUTTON
+            updateButton = new JButton("Update Your Record");
+
+            updateCard.add(updateButton);
+
+            updateButton.addActionListener(new UpdateButtonListener());
+
+            //LABEL AND FIELD FOR ADD RECORD STATUS
+            updateLabel = new JLabel("*****status******");
+            GridBagConstraints gridBagConstraintForUpdateLabel = new GridBagConstraints();
+            gridBagConstraintForUpdateLabel.fill = GridBagConstraints.BOTH;
+            gridBagConstraintForUpdateLabel.insets = new Insets(0, 0, 5, 5);
+            gridBagConstraintForUpdateLabel.gridx = 0;
+            gridBagConstraintForUpdateLabel.gridy = 5;
+            updateCard.add(updateLabel, gridBagConstraintForUpdateLabel);
+
 
 
             tabbedPane.addTab(RECORDSPANEL, memberCard);
@@ -847,6 +1127,76 @@ public class AddressBookClient {
                 }
             }
         }
+
+        public class UpdateButtonListener implements ActionListener, Runnable {
+
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            UserObject readUserObject;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UserObject userObject = new UserObject();
+
+                    userObject.setMessage("UpdateRecord");
+
+                    System.out.println(userObject.getMessage());
+
+                    userObject.setName(user);
+                    userObject.setAddress(addressText.getText().trim());
+                    userObject.setEmail(emailText.getText().trim());
+                    userObject.setPhone(phoneText.getText().trim());
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(userObject);
+
+                    readUserObject = (UserObject) myInputStream.readObject();
+
+                    if (readUserObject.getMessage().equalsIgnoreCase("Updated")) {
+                        System.out.println("Updated Successfully");
+                        updateLabel.setText("Updated Successfully");
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readUserObject.getMessage()).equalsIgnoreCase("Added")) {
+                        updateLabel.setText("Updated Successfully");
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+
     }
 
     public class LoginClientPanel extends JPanel {
@@ -965,8 +1315,9 @@ public class AddressBookClient {
                         System.out.println("User Authorized");
 
                         ArrayList<UserObject> userList = readLoginObject.getUserList();
+                        String user = readLoginObject.getUsername();
 
-                        startMemberFrame(userList);
+                        startMemberFrame(userList, user);
                         //TODO: handle authenticated users, pass required
                     }
                     myOutputStream.close();

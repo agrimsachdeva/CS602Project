@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3869bd7-216a-4098-82d9-419ff6e4be66" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddressBookClient.java" afterPath="$PROJECT_DIR$/src/AddressBookClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JdbcMysql.java" afterPath="$PROJECT_DIR$/src/JdbcMysql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoginObject.java" afterPath="$PROJECT_DIR$/src/LoginObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThreadedDataObjectServer.java" afterPath="$PROJECT_DIR$/src/ThreadedDataObjectServer.java" />
     </list>
     <ignored path="CS602Project.iws" />
@@ -34,117 +34,27 @@
     <favorites_list name="CS602Project" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5288538">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AddressBookClient.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#main#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="method#start#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="method#startAdminFrame#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="e#5754#6160#0" expanded="true" />
-                    <element signature="e#6159#6160#0" expanded="true" />
-                    <element signature="method#addRowToTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="method#clearTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#SearchButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#RefreshButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#AddButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#UpdateButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="method#addRowToTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="method#clearTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#SearchButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                    <element signature="class#RefreshButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="JdbcMysql.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/JdbcMysql.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1022">
-                  <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
-                    <element signature="method#adminAuthentication#0;class#JdbcMysql#0" expanded="false" />
-                    <element signature="method#addRecord#0;class#JdbcMysql#0" expanded="false" />
-                    <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
-                    <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
-                    <marker date="1494446053805" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
-                    <marker date="1494446053805" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
-                    <marker date="1494446053805" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
-                    <marker date="1494446053805" expanded="true" signature="5942:6027" ph="INSERT INTO `memberlogin`... " />
-                    <marker date="1494446053805" expanded="true" signature="7392:7411" ph="select * fro... users" />
-                    <marker date="1494446053805" expanded="true" signature="9034:9092" ph="select * fro... users" />
-                    <marker date="1494446053805" expanded="true" signature="9034:9094" ph="SELECT * FRO... drawings" />
-                    <marker date="1494446053805" expanded="true" signature="10600:10625" ph="DROP TABLE I... " />
-                    <marker date="1494446053805" expanded="true" signature="10790:11122" ph="CREATE TABLE... user" />
-                    <marker date="1494446053805" expanded="true" signature="11275:11422" ph="INSERT INTO user... " />
-                    <marker date="1494446053805" expanded="true" signature="11458:11603" ph="INSERT INTO user... " />
-                    <marker date="1494446053805" expanded="true" signature="11639:11785" ph="INSERT INTO user... " />
-                    <marker date="1494446053805" expanded="true" signature="11946:11964" ph="SELECT * fro... user" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MemberObject.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MemberObject.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#155#156#0" expanded="true" />
-                    <element signature="e#186#187#0" expanded="true" />
-                    <element signature="e#234#235#0" expanded="true" />
-                    <element signature="e#274#275#0" expanded="true" />
-                    <element signature="e#309#310#0" expanded="true" />
-                    <element signature="e#340#341#0" expanded="true" />
-                    <element signature="e#388#389#0" expanded="true" />
-                    <element signature="e#428#429#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ThreadedDataObjectServer.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="109">
-                  <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserObject.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/UserObject.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#514#515#0" expanded="true" />
-                    <element signature="e#546#547#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AddressBookClient.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="961" column="61" selection-start-line="961" selection-start-column="61" selection-end-line="961" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5962#6368#0" expanded="true" />
+                <element signature="e#6367#6368#0" expanded="true" />
+                <element signature="e#11782#12188#0" expanded="true" />
+                <element signature="e#12187#12188#0" expanded="true" />
+                <element signature="e#15380#15786#0" expanded="true" />
+                <element signature="e#15785#15786#0" expanded="true" />
+                <element signature="class#LoginClientPanel#0;class#AddressBookClient#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -186,9 +96,9 @@
         <option value="$PROJECT_DIR$/src/UserObject.java" />
         <option value="$PROJECT_DIR$/src/MemberObject.java" />
         <option value="$PROJECT_DIR$/src/LoginObject.java" />
-        <option value="$PROJECT_DIR$/src/ThreadedDataObjectServer.java" />
         <option value="$PROJECT_DIR$/src/JdbcMysql.java" />
         <option value="$PROJECT_DIR$/src/AddressBookClient.java" />
+        <option value="$PROJECT_DIR$/src/ThreadedDataObjectServer.java" />
       </list>
     </option>
   </component>
@@ -872,12 +782,12 @@
       <workItem from="1492633486295" duration="637000" />
       <workItem from="1494104059972" duration="3347000" />
       <workItem from="1494112647716" duration="43812000" />
-      <workItem from="1494428302971" duration="18066000" />
+      <workItem from="1494428302971" duration="21282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68477000" />
+    <option name="totallyTimeSpent" value="71693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -923,15 +833,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -946,21 +848,13 @@
           <caret line="652" column="76" selection-start-line="652" selection-start-column="76" selection-end-line="652" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#start#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#startAdminFrame#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="e#5754#6160#0" expanded="true" />
-            <element signature="e#6159#6160#0" expanded="true" />
-            <element signature="method#addRowToTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#clearTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#SearchButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#RefreshButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#AddButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#UpdateButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#addRowToTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#clearTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#SearchButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#RefreshButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="e#5962#6368#0" expanded="true" />
+            <element signature="e#6367#6368#0" expanded="true" />
+            <element signature="e#11782#12188#0" expanded="true" />
+            <element signature="e#12187#12188#0" expanded="true" />
+            <element signature="e#15380#15786#0" expanded="true" />
+            <element signature="e#15785#15786#0" expanded="true" />
+            <element signature="class#LoginClientPanel#0;class#AddressBookClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -969,12 +863,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,6 +883,8 @@
           <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1004,24 +895,27 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#adminAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#addRecord#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#addMember#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
-            <marker date="1494446053805" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
-            <marker date="1494446053805" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="5942:6027" ph="INSERT INTO `memberlogin`... " />
-            <marker date="1494446053805" expanded="true" signature="7392:7411" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9092" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9094" ph="SELECT * FRO... drawings" />
-            <marker date="1494446053805" expanded="true" signature="10600:10625" ph="DROP TABLE I... " />
-            <marker date="1494446053805" expanded="true" signature="10790:11122" ph="CREATE TABLE... user" />
-            <marker date="1494446053805" expanded="true" signature="11275:11422" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11458:11603" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11639:11785" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11946:11964" ph="SELECT * fro... user" />
+            <marker date="1494448380848" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
+            <marker date="1494448380848" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="5966:6036" ph="UPDATE `user... " />
+            <marker date="1494448380848" expanded="true" signature="6066:6132" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="6162:6228" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="7559:7644" ph="INSERT INTO `memberlogin`... " />
+            <marker date="1494448380848" expanded="true" signature="9009:9028" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10709" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10711" ph="SELECT * FRO... drawings" />
+            <marker date="1494448380848" expanded="true" signature="12217:12242" ph="DROP TABLE I... " />
+            <marker date="1494448380848" expanded="true" signature="12407:12739" ph="CREATE TABLE... user" />
+            <marker date="1494448380848" expanded="true" signature="12892:13039" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13075:13220" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13256:13402" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13563:13581" ph="SELECT * fro... user" />
           </folding>
         </state>
       </provider>
@@ -1043,6 +937,8 @@
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1053,24 +949,27 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#adminAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#addRecord#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#addMember#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
-            <marker date="1494446053805" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
-            <marker date="1494446053805" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="5942:6027" ph="INSERT INTO `memberlogin`... " />
-            <marker date="1494446053805" expanded="true" signature="7392:7411" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9092" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9094" ph="SELECT * FRO... drawings" />
-            <marker date="1494446053805" expanded="true" signature="10600:10625" ph="DROP TABLE I... " />
-            <marker date="1494446053805" expanded="true" signature="10790:11122" ph="CREATE TABLE... user" />
-            <marker date="1494446053805" expanded="true" signature="11275:11422" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11458:11603" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11639:11785" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11946:11964" ph="SELECT * fro... user" />
+            <marker date="1494448380848" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
+            <marker date="1494448380848" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="5966:6036" ph="UPDATE `user... " />
+            <marker date="1494448380848" expanded="true" signature="6066:6132" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="6162:6228" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="7559:7644" ph="INSERT INTO `memberlogin`... " />
+            <marker date="1494448380848" expanded="true" signature="9009:9028" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10709" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10711" ph="SELECT * FRO... drawings" />
+            <marker date="1494448380848" expanded="true" signature="12217:12242" ph="DROP TABLE I... " />
+            <marker date="1494448380848" expanded="true" signature="12407:12739" ph="CREATE TABLE... user" />
+            <marker date="1494448380848" expanded="true" signature="12892:13039" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13075:13220" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13256:13402" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13563:13581" ph="SELECT * fro... user" />
           </folding>
         </state>
       </provider>
@@ -1087,6 +986,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,14 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sidproj/ChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1757">
@@ -1216,13 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java-addressbook/PersonDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1255,10 +1143,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#514#515#0" expanded="true" />
             <element signature="e#546#547#0" expanded="true" />
@@ -1266,37 +1166,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThreadedDataObjectServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MemberObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="187">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="e#155#156#0" expanded="true" />
             <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#340#341#0" expanded="true" />
@@ -1308,53 +1184,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JdbcMysql.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
-          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="164" column="78" selection-start-line="164" selection-start-column="78" selection-end-line="164" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#memberAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#adminAuthentication#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#addRecord#0;class#JdbcMysql#0" expanded="false" />
+            <element signature="method#addMember#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#fetchUsers#0;class#JdbcMysql#0" expanded="false" />
             <element signature="method#test#0;class#JdbcMysql#0" expanded="false" />
-            <marker date="1494446053805" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
-            <marker date="1494446053805" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
-            <marker date="1494446053805" expanded="true" signature="5942:6027" ph="INSERT INTO `memberlogin`... " />
-            <marker date="1494446053805" expanded="true" signature="7392:7411" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9092" ph="select * fro... users" />
-            <marker date="1494446053805" expanded="true" signature="9034:9094" ph="SELECT * FRO... drawings" />
-            <marker date="1494446053805" expanded="true" signature="10600:10625" ph="DROP TABLE I... " />
-            <marker date="1494446053805" expanded="true" signature="10790:11122" ph="CREATE TABLE... user" />
-            <marker date="1494446053805" expanded="true" signature="11275:11422" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11458:11603" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11639:11785" ph="INSERT INTO user... " />
-            <marker date="1494446053805" expanded="true" signature="11946:11964" ph="SELECT * fro... user" />
+            <marker date="1494448380848" expanded="true" signature="1236:1327" ph="select * fro... memberlogin" />
+            <marker date="1494448380848" expanded="true" signature="2879:2969" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="4505:4612" ph="select * fro... adminlogin" />
+            <marker date="1494448380848" expanded="true" signature="5966:6036" ph="UPDATE `user... " />
+            <marker date="1494448380848" expanded="true" signature="6066:6132" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="6162:6228" ph="update`users... " />
+            <marker date="1494448380848" expanded="true" signature="7559:7644" ph="INSERT INTO `memberlogin`... " />
+            <marker date="1494448380848" expanded="true" signature="9009:9028" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10709" ph="select * fro... users" />
+            <marker date="1494448380848" expanded="true" signature="10651:10711" ph="SELECT * FRO... drawings" />
+            <marker date="1494448380848" expanded="true" signature="12217:12242" ph="DROP TABLE I... " />
+            <marker date="1494448380848" expanded="true" signature="12407:12739" ph="CREATE TABLE... user" />
+            <marker date="1494448380848" expanded="true" signature="12892:13039" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13075:13220" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13256:13402" ph="INSERT INTO user... " />
+            <marker date="1494448380848" expanded="true" signature="13563:13581" ph="SELECT * fro... user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddressBookClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
+        <state relative-caret-position="611">
+          <caret line="961" column="61" selection-start-line="961" selection-start-column="61" selection-end-line="961" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#start#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#startAdminFrame#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="e#5754#6160#0" expanded="true" />
-            <element signature="e#6159#6160#0" expanded="true" />
-            <element signature="method#addRowToTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#clearTable#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#SearchButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#RefreshButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#AddButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#UpdateButtonListener#0;class#AdminPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#addRowToTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="method#clearTable#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#SearchButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
-            <element signature="class#RefreshButtonListener#0;class#MemberPortalPanel#0;class#AddressBookClient#0" expanded="false" />
+            <element signature="e#5962#6368#0" expanded="true" />
+            <element signature="e#6367#6368#0" expanded="true" />
+            <element signature="e#11782#12188#0" expanded="true" />
+            <element signature="e#12187#12188#0" expanded="true" />
+            <element signature="e#15380#15786#0" expanded="true" />
+            <element signature="e#15785#15786#0" expanded="true" />
+            <element signature="class#LoginClientPanel#0;class#AddressBookClient#0" expanded="false" />
           </folding>
         </state>
       </provider>

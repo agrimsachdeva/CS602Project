@@ -142,6 +142,48 @@ class ThreadedDataObjectHandler extends Thread {
                 out.writeObject(myLoginObject);
             }
 
+            // UPDATE
+            if (myObject.getMessage().equals("UpdateRecord")) {
+                UserObject myUserObject = (UserObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                String name = myUserObject.getName();
+                String address = myUserObject.getAddress();
+                String email = myUserObject.getEmail();
+                String phone = myUserObject.getPhone();
+
+                System.out.println("Adding user: " + name);
+
+                if (connection.editRecord(name, address, email, phone)) {
+                    myUserObject.setMessage("Added");
+                    System.out.println("Message written: " + myUserObject.getMessage());
+                }
+
+                out.writeObject(myUserObject);
+            }
+
+            // UPDATE ANY ADMIN
+            if (myObject.getMessage().equals("EditAnyRecord")) {
+                UserObject myUserObject = (UserObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                String name = myUserObject.getName();
+                String address = myUserObject.getAddress();
+                String email = myUserObject.getEmail();
+                String phone = myUserObject.getPhone();
+
+                System.out.println("Adding user: " + name);
+
+                if (connection.editRecord(name, address, email, phone)) {
+                    myUserObject.setMessage("Added");
+                    System.out.println("Message written: " + myUserObject.getMessage());
+                }
+
+                out.writeObject(myUserObject);
+            }
+
+
+
 
             in.close();
             out.close();

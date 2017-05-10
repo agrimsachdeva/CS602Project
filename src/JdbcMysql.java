@@ -136,6 +136,48 @@ class JdbcMysql {
         return added;
     }
 
+    public boolean editRecord(String name, String address, String email, String phone) {
+        boolean added = true;
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            stmt.execute("update`users` set `address` = '"+address+"'  where `name` = '"+name+"'");
+            stmt.execute("update`users` set `email` = '"+email+"'  where `name` = '"+name+"'");
+            stmt.execute("update`users` set `phone` = '"+phone+"'  where `name` = '"+name+"'");
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            added = false;
+
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return added;
+    }
+
+
     public boolean addMember(String username, String password) {
         boolean added = true;
 
