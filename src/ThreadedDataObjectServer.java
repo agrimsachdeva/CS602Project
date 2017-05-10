@@ -117,6 +117,32 @@ class ThreadedDataObjectHandler extends Thread {
                 out.writeObject(myUserObject);
             }
 
+            // REFRESHING
+            if (myObject.getMessage().equals("Refresh")) {
+                LoginObject myLoginObject = (LoginObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                System.out.println("REFRESHING");
+
+                myLoginObject.setUserList(connection.fetchUsers());
+                myLoginObject.setMessage("Success");
+                out.writeObject(myLoginObject);
+            }
+
+            // SEARCH
+            if (myObject.getMessage().equals("Search")) {
+                LoginObject myLoginObject = (LoginObject) myObject;
+                JdbcMysql connection = new JdbcMysql();
+
+                System.out.println("REFRESHING");
+                String searchTerm = myLoginObject.getSearchTerm();
+
+                myLoginObject.setUserList(connection.searchByName(searchTerm));
+                myLoginObject.setMessage("Found");
+                out.writeObject(myLoginObject);
+            }
+
+
             in.close();
             out.close();
             incoming.close();

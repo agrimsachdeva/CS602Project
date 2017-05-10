@@ -65,6 +65,9 @@ public class AddressBookClient {
 
         JTable table;
         JScrollPane scrollPane;
+        JButton refreshButton;
+        JButton searchButton;
+        JTextField searchTerm;
 
 
         JLabel nameLabel, addressLabel, emailLabel, phoneLabel, updateLabel;
@@ -76,7 +79,7 @@ public class AddressBookClient {
         JButton addMember;
 
 
-        public AdminPortalPanel (Container pane, ArrayList<UserObject> userList) {
+        public AdminPortalPanel(Container pane, ArrayList<UserObject> userList) {
             JTabbedPane tabbedPane = new JTabbedPane();
 
             table = new JTable();
@@ -110,28 +113,38 @@ public class AddressBookClient {
             GroupLayout layout = new GroupLayout(memberCard);
 
             memberCard.setLayout(layout);
+            refreshButton = new JButton("Refresh");
+            refreshButton.addActionListener(new RefreshButtonListener());
+
+
+            searchTerm = new JTextField("", 10);
+            searchButton = new JButton("Search");
+
+            searchButton.addActionListener(new SearchButtonListener());
 
             layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    layout.createSequentialGroup()
                             .addGroup(layout.createSequentialGroup()
-                                    .addGap(32, 32, 32)
                                     .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(61, Short.MAX_VALUE))
+                                    )
+                            .addGroup(layout.createSequentialGroup()
+                            .addComponent(refreshButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchTerm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    )
             );
             layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    layout.createSequentialGroup()
                             .addGroup(layout.createSequentialGroup()
-                                    .addContainerGap()
                                     .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(14, Short.MAX_VALUE))
+                                    )
+                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(refreshButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchTerm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            )
             );
 
-//            memberCard.add(usernameLabel);
-//            memberCard.add(usernameText);
-//            memberCard.add(passwordLabel);
-//            memberCard.add(passwordText);
-//            memberCard.add(loginButton, BOTTOM_ALIGNMENT);
-//            memberCard.add(statusLabel);
 
             JPanel updateCard = new JPanel() {
                 //Make the panel wider than it really needs, so
@@ -145,10 +158,10 @@ public class AddressBookClient {
             };
 
             GridBagLayout panelGridBagLayout = new GridBagLayout();
-            panelGridBagLayout.columnWidths = new int[] { 86, 86, 0 };
-            panelGridBagLayout.rowHeights = new int[] { 20, 20, 20, 20, 20, 0 };
-            panelGridBagLayout.columnWeights = new double[] { 0.0, 1.0, Double.MIN_VALUE };
-            panelGridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+            panelGridBagLayout.columnWidths = new int[]{86, 86, 0};
+            panelGridBagLayout.rowHeights = new int[]{20, 20, 20, 20, 20, 0};
+            panelGridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+            panelGridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
             updateCard.setLayout(panelGridBagLayout);
 
 
@@ -305,14 +318,6 @@ public class AddressBookClient {
             addMember.addActionListener(new AddButtonListener());
 
 
-
-//            adminCard.add(adminUsernameLabel);
-//            adminCard.add(adminUsernameText);
-//            adminCard.add(adminPasswordLabel);
-//            adminCard.add(adminPasswordText);
-//            adminCard.add(adminLoginButton);
-//            adminCard.add(adminStatusLabel);
-
             tabbedPane.addTab(RECORDSPANEL, memberCard);
             tabbedPane.addTab(ADDPANEL, updateCard);
             tabbedPane.addTab(ADDMEMBER, addMemberCard);
@@ -333,6 +338,137 @@ public class AddressBookClient {
                 model.addRow(rowData);
             }
 
+        }
+
+        public void clearTable(JTable table) {
+            DefaultTableModel dtm = (DefaultTableModel) table.getModel();
+            dtm.setRowCount(0);
+        }
+
+        public class SearchButtonListener implements ActionListener, Runnable {
+
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            LoginObject readLoginObject;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+
+                    LoginObject loginObject = new LoginObject();
+
+                    loginObject.setMessage("Search");
+
+                    loginObject.setSearchTerm(searchTerm.getText());
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(loginObject);
+
+                    readLoginObject = (LoginObject) myInputStream.readObject();
+
+                    if (readLoginObject.getMessage().equalsIgnoreCase("Found")) {
+                        System.out.println("Found");
+
+                        clearTable(table);
+                        addRowToTable(readLoginObject.getUserList());
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Success")) {
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        public class RefreshButtonListener implements ActionListener, Runnable {
+
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            LoginObject readLoginObject;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+
+                    LoginObject loginObject = new LoginObject();
+
+                    loginObject.setMessage("Refresh");
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(loginObject);
+
+                    readLoginObject = (LoginObject) myInputStream.readObject();
+
+                    if (readLoginObject.getMessage().equalsIgnoreCase("Success")) {
+                        System.out.println("Refreshed");
+
+                        clearTable(table);
+                        addRowToTable(readLoginObject.getUserList());
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Success")) {
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
         }
 
         public class AddButtonListener implements ActionListener, Runnable {
@@ -385,7 +521,6 @@ public class AddressBookClient {
                 }
 
 
-
                 t = new Thread(this);
                 t.start();
             }
@@ -401,7 +536,6 @@ public class AddressBookClient {
                 }
             }
         }
-
 
         public class UpdateButtonListener implements ActionListener, Runnable {
 
@@ -455,7 +589,6 @@ public class AddressBookClient {
                 }
 
 
-
                 t = new Thread(this);
                 t.start();
             }
@@ -482,16 +615,9 @@ public class AddressBookClient {
         JTable table;
         JScrollPane scrollPane;
 
-        JLabel usernameLabel, passwordLabel, statusLabel;
-        JTextField usernameText;
-        JPasswordField passwordText;
-        JButton loginButton;
-
-        JLabel adminUsernameLabel, adminPasswordLabel, adminStatusLabel;
-        JTextField adminUsernameText;
-        JPasswordField adminPasswordText;
-        JButton adminLoginButton;
-
+        JButton searchButton;
+        JTextField searchTerm;
+        JButton refreshButton;
 
         public MemberPortalPanel(Container pane, ArrayList<UserObject> userList) {
             JTabbedPane tabbedPane = new JTabbedPane();
@@ -512,26 +638,6 @@ public class AddressBookClient {
 
             addRowToTable(userList);
 
-//            usernameLabel = new JLabel("Enter Username");
-//            passwordLabel = new JLabel("Enter Password");
-//            usernameText = new JTextField(20);
-//            passwordText = new JPasswordField(20);
-//            loginButton = new JButton("Login");
-//            statusLabel = new JLabel("");
-
-
-//            loginButton.addActionListener(new LoginButtonListener());
-
-//            adminUsernameLabel = new JLabel("Enter Admin Username");
-//            adminPasswordLabel = new JLabel("Enter Admin Password");
-//            adminUsernameText = new JTextField(20);
-//            adminPasswordText = new JPasswordField(20);
-//            adminLoginButton = new JButton("Login");
-//            adminStatusLabel = new JLabel("");
-
-//            adminLoginButton.addActionListener(new AdminLoginButtonListener());
-
-
             //Create the "cards"
             JPanel memberCard = new JPanel() {
                 //Make the panel wider than it really needs, so
@@ -548,11 +654,22 @@ public class AddressBookClient {
 
             memberCard.setLayout(layout);
 
+            refreshButton = new JButton("Refresh");
+            refreshButton.addActionListener(new RefreshButtonListener());
+
+            searchTerm = new JTextField("", 10);
+            searchButton = new JButton("Search");
+
+            searchButton.addActionListener(new SearchButtonListener());
+
             layout.setHorizontalGroup(
                     layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(refreshButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchTerm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                     .addContainerGap(61, Short.MAX_VALUE))
             );
             layout.setVerticalGroup(
@@ -560,15 +677,12 @@ public class AddressBookClient {
                             .addGroup(layout.createSequentialGroup()
                                     .addContainerGap()
                                     .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(refreshButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchTerm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchButton, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                     .addContainerGap(14, Short.MAX_VALUE))
             );
 
-//            memberCard.add(usernameLabel);
-//            memberCard.add(usernameText);
-//            memberCard.add(passwordLabel);
-//            memberCard.add(passwordText);
-//            memberCard.add(loginButton, BOTTOM_ALIGNMENT);
-//            memberCard.add(statusLabel);
 
             JPanel updateCard = new JPanel() {
                 //Make the panel wider than it really needs, so
@@ -581,12 +695,6 @@ public class AddressBookClient {
                 }
             };
 
-//            adminCard.add(adminUsernameLabel);
-//            adminCard.add(adminUsernameText);
-//            adminCard.add(adminPasswordLabel);
-//            adminCard.add(adminPasswordText);
-//            adminCard.add(adminLoginButton);
-//            adminCard.add(adminStatusLabel);
 
             tabbedPane.addTab(RECORDSPANEL, memberCard);
             tabbedPane.addTab(UPDATEMEMBER, updateCard);
@@ -606,11 +714,14 @@ public class AddressBookClient {
                 rowData[4] = list.get(i).phone;
                 model.addRow(rowData);
             }
-
         }
 
+        public void clearTable(JTable table) {
+            DefaultTableModel dtm = (DefaultTableModel) table.getModel();
+            dtm.setRowCount(0);
+        }
 
-        public class LoginButtonListener implements ActionListener, Runnable {
+        public class SearchButtonListener implements ActionListener, Runnable {
 
             Thread t;
             ObjectOutputStream myOutputStream;
@@ -619,58 +730,117 @@ public class AddressBookClient {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-//                try {
-//                    LoginObject loginObject = new LoginObject();
-//
-//                    loginObject.setMessage("LoginCredentials");
-//
-//                    loginObject.setUsername(usernameText.getText().trim());
-//
-//                    loginObject.setPassword(String.valueOf(passwordText.getPassword()));
-//
-//                    Socket socketToServer = new Socket("127.0.0.1", 3000);
-//
-//                    myOutputStream =
-//                            new ObjectOutputStream(socketToServer.getOutputStream());
-//
-//                    myInputStream =
-//                            new ObjectInputStream(socketToServer.getInputStream());
-//
-//                    myOutputStream.writeObject(loginObject);
-//
-//                    readLoginObject = (LoginObject) myInputStream.readObject();
-//
-//                    if (readLoginObject.getMessage().equalsIgnoreCase("Authorized")) {
-//                        System.out.println("User Authorized");
-//
-//                        startMemberFrame();
-//                        //TODO: handle authenticated users, pass required
-//                    }
-//                    myOutputStream.close();
-//
-//                    myInputStream.close();
-//
-//                    socketToServer.close();
-//
-//                } catch (UnknownHostException uhe) {
-//                    System.out.println(uhe.getMessage());
-//                } catch (IOException ioe) {
-//                    System.out.println(ioe.getMessage());
-//                } catch (Exception ex) {
-//                    ex.printStackTrace();
-//                }
-//
-//                loginButton.setEnabled(false);
-//
-//                t = new Thread(this);
-//                t.start();
+                try {
+
+                    LoginObject loginObject = new LoginObject();
+
+                    loginObject.setMessage("Search");
+
+                    loginObject.setSearchTerm(searchTerm.getText());
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(loginObject);
+
+                    readLoginObject = (LoginObject) myInputStream.readObject();
+
+                    if (readLoginObject.getMessage().equalsIgnoreCase("Found")) {
+                        System.out.println("Found");
+
+                        clearTable(table);
+                        addRowToTable(readLoginObject.getUserList());
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                t = new Thread(this);
+                t.start();
             }
 
             @Override
             public void run() {
                 try {
-                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Authorized")) {
-                        statusLabel.setText("Not Authorized");
+                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Success")) {
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        public class RefreshButtonListener implements ActionListener, Runnable {
+
+            Thread t;
+            ObjectOutputStream myOutputStream;
+            ObjectInputStream myInputStream;
+            LoginObject readLoginObject;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+
+                    LoginObject loginObject = new LoginObject();
+
+                    loginObject.setMessage("Refresh");
+
+
+                    Socket socketToServer = new Socket("127.0.0.1", 3000);
+
+                    myOutputStream =
+                            new ObjectOutputStream(socketToServer.getOutputStream());
+
+                    myInputStream =
+                            new ObjectInputStream(socketToServer.getInputStream());
+
+                    myOutputStream.writeObject(loginObject);
+
+                    readLoginObject = (LoginObject) myInputStream.readObject();
+
+                    if (readLoginObject.getMessage().equalsIgnoreCase("Success")) {
+                        System.out.println("Refreshed");
+
+                        clearTable(table);
+                        addRowToTable(readLoginObject.getUserList());
+                    }
+                    myOutputStream.close();
+
+                    myInputStream.close();
+
+                    socketToServer.close();
+
+                } catch (UnknownHostException uhe) {
+                    System.out.println(uhe.getMessage());
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                t = new Thread(this);
+                t.start();
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!(readLoginObject.getMessage()).equalsIgnoreCase("Success")) {
                     }
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
@@ -813,7 +983,7 @@ public class AddressBookClient {
                     ex.printStackTrace();
                 }
 
-                loginButton.setEnabled(false);
+                loginButton.setEnabled(true);
 
                 t = new Thread(this);
                 t.start();
@@ -884,7 +1054,7 @@ public class AddressBookClient {
                     ex.printStackTrace();
                 }
 
-                adminLoginButton.setEnabled(false);
+                adminLoginButton.setEnabled(true);
 
                 t = new Thread(this);
                 t.start();

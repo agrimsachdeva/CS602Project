@@ -7,7 +7,21 @@ public class LoginObject extends DataObject {
 
     String username;
     String password;
+    String searchTerm;
     ArrayList<UserObject> userList;
+
+
+
+
+
+
+    public String getSearchTerm() {
+        return searchTerm;
+    }
+
+    public void setSearchTerm(String searchTerm) {
+        this.searchTerm = searchTerm;
+    }
 
 
 

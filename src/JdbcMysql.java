@@ -220,6 +220,51 @@ class JdbcMysql {
         return userList;
     }
 
+    public ArrayList<UserObject> searchByName(String searchTerm) {
+
+        ArrayList<UserObject> userList = new ArrayList<>();
+
+        System.out.println("Starting test . . .");
+
+        System.out.println("Loading driver . . .");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        System.out.println("Driver loaded.");
+        System.out.println("Establishing connection . . . ");
+        try {
+            Connection conn;
+            conn = DriverManager.getConnection("jdbc:mysql://" + url + "/" + ucid + "?user=" + ucid + "&password=" + dbpassword);
+
+            System.out.println("Connection established.");
+            System.out.println("Creating a Statement object . . . ");
+
+            Statement stmt = conn.createStatement();
+            System.out.println("Statement object created.");
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE name LIKE '%" + searchTerm + "%'");
+
+            while(rs.next()) {
+                UserObject temp = new UserObject(rs.getInt("id"), rs.getString("name"), rs.getString("address"), rs.getString("email"),rs.getString("phone"));
+                userList.add(temp);
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException E) {
+            System.out.println("SQLException: " + E.getMessage());
+            System.out.println("SQLState:     " + E.getSQLState());
+            System.out.println("VendorError:  " + E.getErrorCode());
+        }
+
+        return userList;
+    }
+
+
 
 
 
